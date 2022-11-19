@@ -1,0 +1,15 @@
+.cell {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.black {
+  background-color: $light-blue;
+}
+
+.white {
+  background-color: $light-orange;
+}
