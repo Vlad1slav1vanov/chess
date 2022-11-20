@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BoardComponent from './components/BoardComponent/BoardComponent';
+import LostFiguresComponent from './components/LostFiguresComponent/LostFiguresComponent';
+import TimerComponent from './components/TimerComponent/TimerComponent';
 import { Board } from './models/Board';
 import { Colors } from './models/Colors';
 import { Player } from './models/Player';
@@ -29,12 +31,26 @@ function App() {
 
   return (
     <div className='app'>
+      <TimerComponent 
+        restart={restart}
+        currentPlayer={currentPlayer}
+      />
       <BoardComponent 
         board={board} 
         setBoard={setBoard}
         currentPlayer={currentPlayer}
         swapPlayer={swapPlayer}
       />
+      <div>
+        <LostFiguresComponent 
+          title={"Черные фигуры"} 
+          figures={board.lostBlackFigures}
+        />
+        <LostFiguresComponent 
+          title={"Белые фигуры"} 
+          figures={board.lostWhiteFigures}
+        />
+      </div>
     </div>
   );
 }
