@@ -5,6 +5,7 @@ import { Cell } from "../Cell";
 import { Colors } from "../Colors";
 
 export class King extends Figure {
+
   constructor(color: Colors, cell: Cell) {
     super(color, cell)
     this.logo = color === Colors.BLACK ? blackLogo : whiteLogo;
@@ -23,6 +24,7 @@ export class King extends Figure {
       (target.x === this.cell.x + 1 && target.y === this.cell.y - 1) 
       || (target.x === this.cell.x - 1 && target.y === this.cell.y + 1)
     )
+    
 
     if(isVerticalMove 
       || isHorizontalMove 
@@ -31,4 +33,6 @@ export class King extends Figure {
 
     return false;
   }
+
+  
 }

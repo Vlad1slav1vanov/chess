@@ -108,6 +108,7 @@ export class Cell {
       }
       target.setFigure(this.figure);
       this.figure = null;
+
     }
   }
 }
